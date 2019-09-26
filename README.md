@@ -4,7 +4,7 @@
 
 ​		本项目复现**左程云**老师书籍《**程序员代码面试指南：IT名企算法与数据结构题目最优解**》(第二版)中算法题目的代码。本人的代码均参照左程云老师的思路，并使用C++进行编程复现。编写的代码均可在[牛客网测评系统](https://www.nowcoder.com/ta/programmer-code-interview-guide)中成功提交。
 
-![Cover](cover.jpg)
+![Cover](Cover.jpg)
 
 ## 第一章：栈与队列
 
