@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1569488680 source:c:\users\wyf\code\algorithm\interview\ch1_stack_queue\debug\main.cpp
+	<iostream>
+	<cstdio>
+	<stack>
+
