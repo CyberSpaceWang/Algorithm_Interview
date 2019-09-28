@@ -39,7 +39,7 @@ void reverse(stack<int> &s)
 
 int main()
 {
-	freopen("in.txt", "r", stdin);
+	// freopen("in.txt", "r", stdin);
 	int num;
 	cin >> num;
 	for (int i = 0; i < num; i++)
