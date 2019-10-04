@@ -38,6 +38,8 @@ int main()
 		}
 	}
 	while (!s1.empty())
+	{
 		cout << s1.top() << " ";
 		s1.pop();
+	}
 }
