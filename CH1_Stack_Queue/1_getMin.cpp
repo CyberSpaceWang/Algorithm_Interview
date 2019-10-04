@@ -41,9 +41,7 @@ int main()
 				stackMin.pop();
 		}
 		else
-		{
 			cout << stackMin.top() << endl;
-		}
 	}	
 	return 0;
 }

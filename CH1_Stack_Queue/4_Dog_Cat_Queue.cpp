@@ -39,14 +39,14 @@ struct Pet
 };
 
 
-void Pop1(queue<Pet> &pet)
+void Pop1(queue<Pet> &pet)       // 删除队列的一个元素
 {
 	Pet animal = pet.front();
 	pet.pop();
 	cout << animal.pet_name << " " << animal.x << endl;
 }
 
-void Pop_all(queue<Pet> &pet)
+void Pop_all(queue<Pet> &pet)    // 删除队列中所有元素
 {
 	while (!pet.empty())
 	{
@@ -66,7 +66,7 @@ void is_empty_queue(queue<Pet> pet)
 
 int main()
 {
-	freopen("in.txt", "r", stdin);
+	// freopen("in.txt", "r", stdin);
 	int step, total = 0;
 	cin >> step;
 	queue<Pet> Dog, Cat;
@@ -86,7 +86,7 @@ int main()
 		}
 		else if (s == "pollAll")
 		{
-			while(!Cat.empty() || !Dog.empty())
+			while(!Cat.empty() || !Dog.empty())       // 只要有一个队列非空就必须执行
 			{
 				if (!Cat.empty() && !Dog.empty())
 				{

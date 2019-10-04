@@ -18,9 +18,9 @@ using namespace std;
 
 stack<int> spush, spop;
 
-void ToPop()
+void ToPop()         // 将push栈的元素全部压入pop栈中
 {
-	if (spop.empty())   // pop栈为空,需要从push栈中一次性导入
+	if (spop.empty())   // pop栈为空,需要从push栈中一次性导入(这个判断条件是必须的)
 	{
 		while (!spush.empty())
 		{

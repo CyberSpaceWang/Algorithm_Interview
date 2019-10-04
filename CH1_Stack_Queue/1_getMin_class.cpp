@@ -12,9 +12,7 @@ public:
 	{
 		stackData.push(value);
 		if (stackMin.empty() || value <= stackData.top())
-		{
 			stackMin.push(value);
-		}
 	}
 
 	void pop()
@@ -26,9 +24,7 @@ public:
 	}
 
 	int getMin()
-	{
 		return stackMin.top();
-	}
 
 };
 
@@ -50,9 +46,7 @@ int main()
 			obj.push(num);
 		}
 		else if (s == "pop")
-		{
 			obj.pop();
-		}
 		else
 			cout << obj.getMin() << endl;
 	}

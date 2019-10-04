@@ -12,7 +12,7 @@ using namespace std;
 
 stack <int> s;
 
-int Get_Remove_Last_Ele(stack<int> &s)   // 删除底层元素，其他正常放入!
+int Get_Remove_Last_Ele(stack<int> &s)   // 获取底层元素值并删除之，其他正常放入!
 {
 	int temp = s.top();     // 当前元素,后续也应当push该值
 	s.pop();
@@ -21,7 +21,7 @@ int Get_Remove_Last_Ele(stack<int> &s)   // 删除底层元素，其他正常放
 	else
 	{
 		int result = Get_Remove_Last_Ele(s);
-		// 回溯
+		// 回溯部分
 		s.push(temp);
 		return result;        // 此函数并不完美,
 	}
