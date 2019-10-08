@@ -39,7 +39,7 @@ int process(int num, string left, string mid, string right, string from, string 
 
 int main()
 {
-	freopen("in.txt", "r", stdin);
+	// freopen("in.txt", "r", stdin);
 	int num;          // 本题输入太少,可不使用freopen
 	cin >> num;
 	string left = "left", mid = "mid", right="right";
