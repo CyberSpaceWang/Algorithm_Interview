@@ -1,0 +1,2 @@
+tcase = input()
+print(tcase)
