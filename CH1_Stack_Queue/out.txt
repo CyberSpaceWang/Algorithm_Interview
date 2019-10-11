@@ -1,9 +1,7 @@
-Move 1 from left to mid
-Move 1 from mid to right
-Move 2 from left to mid
-Move 1 from right to mid
-Move 1 from mid to left
-Move 2 from mid to right
-Move 1 from left to mid
-Move 1 from mid to right
-It will move 8 steps.
+-1 2
+0 2
+-1 -1
+2 5
+3 5
+2 -1
+5 -1

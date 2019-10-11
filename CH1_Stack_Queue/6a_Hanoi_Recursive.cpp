@@ -32,7 +32,7 @@ int process(int num, string left, string mid, string right, string from, string 
 	int part1 = process(num-1, left, mid, right, from, to);     // 上层num-1柱子从左->右
 	cout << "Move " << num << " from " << from << " to mid\n"; // 底层柱子从from->to,此时from不一定是left
 	int part2 = process(num-1, left, mid, right, to, from);     // 上层num-1柱子从右->左
-	cout << "Move " << num << " from mid to " << to << endl;	// 底层柱子从to->from
+	cout << "Move " << num << " from mid to " << to << endl;    // 底层柱子从to->from
 	int part3 = process(num-1, left, mid, right, from, to);     // 上层num-1柱子从左->右
 	return part1 + part2 + part3 + 2;
 }

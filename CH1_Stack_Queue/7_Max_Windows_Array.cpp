@@ -15,7 +15,7 @@ CH1 双端队列--生成窗口最大值数组
 #include <vector>
 using namespace std;
 
-deque<int> dq;
+deque<int> dq;            // 注意:存元素下标而非元素值!
 vector<int> arr;
 
 int main()
@@ -30,24 +30,15 @@ int main()
 	}
 	
 	for (int i = 0; i < len; i++)
-	{
-		if (dq.empty())
-			dq.push_back(i);       // 注意:存元素下标而非元素值!
-		else
-		{
-			if (arr[dq.back()] > arr[i])  // 若队末对应元素值大于当前数组元素值
-				dq.push_back(i);
-			else
-			{                   // 否则弹出队末元素,直到队列为空或队末对应元素值大于当前数组元素值
-				while (!dq.empty() && arr[dq.back()] <= arr[i])  // <= !!
-					dq.pop_back();
-				dq.push_back(i);       
-			}
-		}
-		if (i >= w-1)         // 因为窗口因素,从w-1下标开始,根据dq输出窗口最大值
+	{                     // 若队尾元素小于当前元素,弹出队末元素直到队列为空
+		while (!dq.empty() && arr[dq.back()] <= arr[i])  // <= !!
+			dq.pop_back();
+		dq.push_back(i);         // 这一步是对任意i都必须操作的(思考)
+
+		if (i >= w-1)            // 窗口,从w-1下标开始,根据dq输出窗口最大值
 		{
 			int ind = dq.front();
-			while (ind <= i - w)     // 避免队头元素位于窗口外!
+			while (ind <= i - w)         // 避免队头元素位于窗口外!
 			{
 				dq.pop_front();
 				ind = dq.front();
