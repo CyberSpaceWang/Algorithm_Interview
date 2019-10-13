@@ -14,14 +14,17 @@ class stack():
 		self.items.append(item)
 	
 	def pop(self):
-		self.items.pop()
+		return self.items.pop()     # 弹出并返回
 	
 	def top(self):
 		return self.items[len(self.items)-1]
 		
 	def size(self):
 		return len(self.items)
-
+		
+	def clear(self):                # 类中的成员函数访问成员变量或成员函数
+		while not len(self.items) == 0:
+			self.items.pop()        # 使用self.pop()同样可以实现
 
 if __name__ == '__main__':    # 测试
 	s = stack()
@@ -29,7 +32,6 @@ if __name__ == '__main__':    # 测试
 	s.push(2)
 	s.push(3)
 	print(s.size())
-	while not s.empty():
-		print(s.top())
-		s.pop()
+	s.clear()
+	print(s.size())
 	

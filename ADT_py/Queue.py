@@ -21,10 +21,10 @@ class queue():
 		return self.items == []
 	
 	def size(self):
-		return len(items)
+		return len(self.items)
 	
 	def clear(self):
-		while not self.items.empty():
+		while not len(self.items) == 0:
 			self.items.pop()
 
 
@@ -34,6 +34,6 @@ if __name__ == '__main__':
 	q.push(2)
 	q.push(3)
 	q.clear()
-	
+	print(q.size())
 	
 	
