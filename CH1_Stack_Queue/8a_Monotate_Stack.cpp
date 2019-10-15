@@ -35,7 +35,7 @@ int main()
 	for (int i = 0; i < num; i++)
 	{
 		int lind = -1, rind = -1;
-		for (int j = i-1; j >= 0; j--)
+		for (int j = i-1; j >= 0; j--)        // 向左遍历
 		{
 			if (vec[j] < vec[i])
 			{
@@ -45,7 +45,7 @@ int main()
 		}
 		cout << lind << " ";
 		
-		for (int j = i+1; j < num; j++)
+		for (int j = i+1; j < num; j++)       // 向右遍历
 		{
 			if (vec[j] < vec[i])
 			{

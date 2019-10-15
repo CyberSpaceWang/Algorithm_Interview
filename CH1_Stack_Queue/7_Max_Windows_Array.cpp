@@ -38,7 +38,7 @@ int main()
 		if (i >= w-1)            // 窗口,从w-1下标开始,根据dq输出窗口最大值
 		{
 			int ind = dq.front();
-			while (ind <= i - w)         // 避免队头元素位于窗口外!
+			while (ind <= i - w)  // 避免队头元素位于窗口外!用if更好!因为每次只加入一个元素
 			{
 				dq.pop_front();
 				ind = dq.front();
