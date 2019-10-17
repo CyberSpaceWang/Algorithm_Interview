@@ -38,7 +38,7 @@ int main()
             qmax.pop_back();
              qmax.push_back(j);
     
-            while (!qmin.empty() && arr[qmin.back() >= arr[j]])
+            while (!qmin.empty() && arr[qmin.back()] >= arr[j])
                 qmin.pop_back();
             qmin.push_back(j);
 			// 此时,双端队列维护单的是[i,j]中的最大最小值
