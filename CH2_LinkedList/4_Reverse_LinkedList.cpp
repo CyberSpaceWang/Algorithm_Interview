@@ -128,7 +128,7 @@ void print_double_list(double_list_node * head)
 
 int main ()
 {
-	freopen("in.txt", "r", stdin);
+	// freopen("in.txt", "r", stdin);
     list_node * head = input_list();
     double_list_node * double_head = input_double_list();
     list_node * new_head = reverse_list(head);
