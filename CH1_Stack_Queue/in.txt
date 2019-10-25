@@ -1,2 +1,11 @@
-5    
-1 2 3 4 5
+10
+push -185224
+push -515268
+getMin
+push -57301
+pop
+pop
+push 539954
+push 886856
+push 333965
+getMin

@@ -1,13 +1,12 @@
 /*
-2019-10.17
-CH2 链表--打印两个有序链表的公共部分
+2019-10.25
+CH2 链表--判断链表是否是回文结构
 输入:
 4
-1 2 3 4
-5
-1 2 3 5 6
+1 2 2 1
+
 输出:
-1 2 3
+true
 */
 
 # include <bits/stdc++.h>
@@ -16,9 +15,9 @@ using namespace std;
 struct list_node{
     int val;
     struct list_node * next;
-}; //链表的节点
+};
 
-list_node * input_list(void) //读入链表
+list_node * input_list(void)
 {
     int n, val;
     list_node * phead = new list_node();
@@ -42,28 +41,39 @@ list_node * input_list(void) //读入链表
 }
 
 
-void sol(list_node * a_head, list_node * b_head)
+list_node * check(list_node * head)        // 时间复杂度O(2n),空间复杂度O(n)
 {
     //////在下面完成代码
-	while (a_head && b_head)
-	{
-		if (a_head->val == b_head->val)
-		{
-			cout << a_head->val << " ";
-			a_head = a_head->next;
-			b_head = b_head->next;
-		}
-		else if (a_head == NULL || a_head->val > b_head->val)
-			b_head = b_head->next;
-		else
-			a_head = a_head->next;
-	}
+    list_node* cur = head;
+    stack<int> s;
+    while (cur)
+    {
+        s.push(cur->val);
+        cur = cur->next;
+    }
+    
+    cur = head;
+    while (!s.empty())
+    {
+        if (s.top() != cur->val)
+        {
+            cout << "false";
+            return head;
+        }
+        s.pop();
+        cur = cur->next;
+    }
+    
+    cout << "true";
+    return head;
+
 }
+
 
 int main ()
 {
-    list_node * a_head = input_list(); // A 链表的头节点
-    list_node * b_head = input_list(); // B 链表的头节点
-    sol(a_head, b_head);
+    int L, R;
+    list_node * head = input_list();
+    check(head);
     return 0;
 }
