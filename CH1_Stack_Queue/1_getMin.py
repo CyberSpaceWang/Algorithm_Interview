@@ -21,7 +21,7 @@ for _ in range(n):
 	x = sys.stdin.readline().split()
 	# print(x)
 	if x[0] == "push":
-		num = int(x[1])                    # 大坑--必须进行int()类型转换
+		num = int(x[1])      # 大坑--必须进行int()类型转换,否则存入的是字符串,负数时有bug
 		stack.append(num)
 		if stack_min == [] or stack_min[-1] >= num:
 			stack_min.append(num)
