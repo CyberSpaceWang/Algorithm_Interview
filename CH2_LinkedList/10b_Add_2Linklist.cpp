@@ -70,7 +70,7 @@ list_node * add_list(list_node * head1, list_node * head2)   // 要求返回链�
         val2 = head2==NULL? 0 : head2->val;
         head2 = head2==NULL ? NULL : head2->next;
         tot = val1 + val2 + add;
-        if (tot >= 10)               // 73-79可以简化为:add=tot/10, tot=tot%10;
+        if (tot >= 10)               // 73-79行可以简化为:add=tot/10, tot=tot%10;
         {
             add = 1;
             tot -= 10;

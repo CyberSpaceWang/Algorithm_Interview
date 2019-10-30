@@ -1,7 +1,6 @@
 /*
 2019-10.23
 计算几何模板
-
 */
 
 #include <iostream>
@@ -20,7 +19,6 @@ public:
 	Point operator / (double k)  { return Point(x / k, y / k);}
 	double norm()  { return x * x + y * y; }
 	double abs()  { return sqrt(norm()); }
-	
 	
 };
 /* 在类外这样定义!
@@ -47,9 +45,7 @@ typedef Point Vector;       // Vector与Point重名,一个点也可以是向量
 typedef Segment Line;
 typedef vector<Point> Polygon;      // 一个多边形由多个点构成
 
-
 // 计算
-
 
 
 int main()
