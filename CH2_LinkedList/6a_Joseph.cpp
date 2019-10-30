@@ -38,6 +38,7 @@ circular_list* input_list(int n)
 	return head;
 }
 
+//------------------------------------------Code Here-------------------------------------------//
 void Joseph(circular_list* head, int num)       // 报数到num个人删除一次
 {
 	int cnt = 0;

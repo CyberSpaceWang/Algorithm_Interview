@@ -5,9 +5,11 @@ CH1 栈--使用递归函数和栈操作逆序一个栈
 5
 1 2 3 4 5
 '''
-import sys
-x = sys.stdin.readline().strip()
+import pdb
+
+pdb.set_trace()
+x = input().strip()
 print(x)
-nums = [int(i) for i in sys.stdin.readline().split()]
+nums = [int(i) for i in input().split()]
 print(nums)
 	

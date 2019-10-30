@@ -41,7 +41,7 @@ list_node * input_list(void) //读入链表
     return phead;
 }
 
-
+//------------------------------------------Code Here-------------------------------------------//
 void sol(list_node * a_head, list_node * b_head)
 {
     //////在下面完成代码

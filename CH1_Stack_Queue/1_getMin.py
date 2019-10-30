@@ -9,16 +9,16 @@ getMin
 pop
 getMin
 '''
-import sys
 import pdb
 
-# pdb.set_trace()
 
-n = int(sys.stdin.readline().strip())
+n = int(input().strip())
 stack = []
 stack_min = []
 for _ in range(n):
-	x = sys.stdin.readline().split()
+	x = input().split()
+	pdb.set_trace()
+
 	# print(x)
 	if x[0] == "push":
 		num = int(x[1])      # 大坑--必须进行int()类型转换,否则存入的是字符串,负数时有bug

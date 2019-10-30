@@ -42,6 +42,7 @@ list_node * input_list(void) //读入链表
     return phead;
 }
 
+//------------------------------------------Code Here-------------------------------------------//
 list_node * remove_last_kth_node(list_node * head, int K)
 {
     //////在下面完成代码

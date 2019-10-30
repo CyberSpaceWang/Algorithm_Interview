@@ -1,6 +1,8 @@
 /*
 2019-10.27 
 CH2 链表--将单链表按某值划分成左边小、中间相等、右边大的形式
+时间复杂度O(N),空间复杂度O(N)
+
 输入:
 6 3
 3 3 3 4 5 1
@@ -43,6 +45,7 @@ list_node * input_list(void)
     return phead;
 }
 
+//------------------------------------------Code Here-------------------------------------------//
 void swap(int arr[], int a, int b)
 {
     int t = arr[a];
@@ -100,7 +103,7 @@ void print_list(list_node * head)
 int main ()
 {
     list_node * head = input_list();
-    list_partition(head, pivot);
+    head = list_partition(head, pivot);
     print_list(head);
     return 0;
 }
