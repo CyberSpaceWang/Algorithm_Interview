@@ -40,7 +40,8 @@ list_node * input_list(void)
     return phead;
 }
 
- 
+//---------------------------------------Code Here----------------------------------------//
+
 list_node * check(list_node * head)        // 时间复杂度O(3n/2),空间复杂度O(n/2)
 {
     //////在下面完成代码
