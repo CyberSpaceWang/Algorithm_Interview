@@ -90,6 +90,7 @@ list_node * add_list(list_node * head1, list_node * head2)   // 要求返回链�
 	return cur;
 }
 
+
 void print_list(list_node * head)
 {
     while (head != NULL) {
