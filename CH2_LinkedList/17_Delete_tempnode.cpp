@@ -1,13 +1,13 @@
 /*
-删除无序单链表中重复出现的节点
-时间:O(N),空间:O(N)
+2019-11.23
+一种怪异的链表删除方式
 输入:
-5
-1 3 2 3 1
+5 
+1 2 3 4 5
+3
 输出:
-1 2 3
+1 2 4 5
 */
-
 
 # include <bits/stdc++.h>
 using namespace std;
@@ -17,12 +17,19 @@ struct list_node{
     struct list_node * next;
 };
 
-list_node * input_list()
+list_node * find_kth_node(list_node * head, int k)
 {
-    int val, n;
-    scanf("%d", &n);
+    list_node * c = head;
+    for (int i = 1; i < k; ++i) c = c->next;
+    return c;
+}
+
+list_node * input_list(void)
+{
+    int n, val;
     list_node * phead = new list_node();
     list_node * cur_pnode = phead;
+    scanf("%d", &n);
     for (int i = 1; i <= n; ++i) {
         scanf("%d", &val);
         if (i == 1) {
@@ -42,25 +49,11 @@ list_node * input_list()
 
 /*--------------------------------------Code Here--------------------------------------*/
 
-const int maxn = 2000005;
-int hashset[maxn];
-
-list_node * remove_rep(list_node * head)
+void remove_node_wired(list_node * node)
 {
-    memset(hashset, 0, sizeof(hashset));
-    list_node* cur = head, *pre = NULL;
-    while (cur)
-    {
-        if (hashset[cur->val + 1000000] == 1)
-            pre->next = cur->next;
-        else
-        {
-            hashset[cur->val + 1000000] = 1;
-            pre = cur;
-        }
-        cur = cur->next;
-    }
-    return head;
+    list_node *next = node->next;
+    node->val = next->val;
+    node->next = next->next;
 }
 
 
@@ -73,10 +66,14 @@ void print_list(list_node * head)
     puts("");
 }
 
+
 int main ()
 {
     list_node * head = input_list();
-    list_node * new_head = remove_rep(head);
-    print_list(new_head);
+    int n;
+    scanf("%d", &n);
+    list_node * node = find_kth_node(head, n);
+    remove_node_wired(node);
+    print_list(head);
     return 0;
 }

@@ -43,7 +43,6 @@ list_node * input_list()
 
 /*--------------------------------------Code Here--------------------------------------*/
 
-
 list_node * remove_rep(list_node * head)
 {
     list_node* cur = head, *pre = NULL;

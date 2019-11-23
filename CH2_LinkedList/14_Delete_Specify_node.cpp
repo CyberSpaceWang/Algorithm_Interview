@@ -43,9 +43,10 @@ list_node * input_list()
 }
 
 
+/*--------------------------------------Code Here--------------------------------------*/
+
 list_node * remove_value(list_node * head, int num)
 {
-    //////在下面完成代码
     while (head)
     {
         if (head->val != num)
