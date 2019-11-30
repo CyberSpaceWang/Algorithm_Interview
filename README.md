@@ -12,6 +12,15 @@
 2. 考察所有可能的情况，将过程完整的模拟一遍，讨论细节；
 3. 编写代码、注意细节实现。
 
+**测试说明**：
+
+&emsp;&emsp;以Linux平台为例，可以使用`g++`编译源代码、`gdb`调试代码，并使用输入输出重定向解决测试数据问题！样例如下:
+
+```shell
+$ g++ -g test.cpp -o test   # -g表示调试, -o指示可执行文件名称
+$ ./test < in.txt           # 重定向输入
+```
+
 ## 常用数据结构的实现
 
 &emsp;&emsp;本块列举书中所涉数据结构的实现。其中部分数据结构尝试使用C++或python手编实现(可能并不整洁高效，为demo版)，也有数据结构可直接调用C++ STL(标准模板库)实现，具体用法可见官方文档。
@@ -22,26 +31,27 @@
 |      1       |   队列   |   [queue](http://www.cplusplus.com/reference/queue/queue/)   |           [Python](ADT_py/Queue.py)            |
 |      1       | 双端队列 |   [deque](http://www.cplusplus.com/reference/deque/deque/)   |           [Python](ADT_py/Deque.py)            |
 |      2       |   链表   |    [list](http://www.cplusplus.com/reference/list/list/)     |        [C++](ADT_cpp/LinkList_demo.cpp)        |
+|      3       |  二叉树  |                                                              |                                                |
 |      5       |  字符串  | [C++ String类](http://www.cplusplus.com/reference/string/string/) |                       无                       |
 |      9       | 计算几何 |                              无                              | [C++](ADT_cpp/Coputational_Geometry.cpp)(未完) |
 
 ## 第一章：栈与队列
 
-| 序号 |                             题目                             | 难度 |    完成时间    |                             实现                             |       标签       |
-| :--: | :----------------------------------------------------------: | :--: | :------------: | :----------------------------------------------------------: | :--------------: |
-|  1   | [设计getMin功能的栈](https://www.nowcoder.com/practice/05e57ce2cd8e4a1eae8c3b0a7e9886be?tpId=101&tqId=33073&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   |   2019-9.24    | [C++](CH1_Stack_Queue/1_getMin.cpp)，[Python](CH1_Stack_Queue/1_getMin.py) |      栈设计      |
-|  2   | [使用两个栈模拟队列](https://www.nowcoder.com/practice/6bc058b32ee54a5fa18c62f29bae9863?tpId=101&tqId=33074&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   |   2019-9.24    |           [C++](CH1_Stack_Queue/2_stack_queue.cpp)           |      栈设计      |
-|  3   | [用递归函数和栈逆序一个栈](https://www.nowcoder.com/practice/1de82c89cc0e43e9aa6ee8243f4dbefd?tpId=101&tqId=33075&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   |   2019-9.26    |   [C++](CH1_Stack_Queue/3_Inverse_Stack_by_Recursion.cpp)    |       递归       |
-|  4   | [猫狗队列](https://www.nowcoder.com/practice/8a7e04cff6a54b7095b94261d78108f5?tpId=101&tqId=33168&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   |   2019-10.3    |          [C++](CH1_Stack_Queue/4_Dog_Cat_Queue.cpp)          |      大模拟      |
-|  5   | [用一个栈实现另一个栈的排序](https://www.nowcoder.com/practice/ff8cba64e7894c5582deafa54cca8ff2?tpId=101&tqId=33081&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   |   2019-9.28    |           [C++](CH1_Stack_Queue/5_Sort_Stack.cpp)            |      栈设计      |
-|  6   | [用栈来求解汉诺塔问题](https://www.nowcoder.com/practice/1a2f618b3433487295657b3414f4e7c4?tpId=101&tqId=33090&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  3   |   2019-10.8    |        [C++](CH1_Stack_Queue/6a_Hanoi_Recursive.cpp)         |       递归       |
-|  7   | [生成窗口最大值数组](https://www.nowcoder.com/practice/b316c7f9617744b98fa311ae29ac516c?tpId=101&tqId=33083&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   |   2019-10.6    |        [C++](CH1_Stack_Queue/7_Max_Windows_Array.cpp)        |     双端队列     |
-|  8a  | [单调栈结构--基础](https://www.nowcoder.com/practice/e3d18ffab9c543da8704ede8da578b55?tpId=101&tqId=33169&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   | **2019**-10.11 | [C++_v1_](CH1_Stack_Queue/8a1_Monotate_Stack.cpp)<br />[C++_v2_](CH1_Stack_Queue/8a2_Monotate_Stack.cpp) | 模拟<br />单调栈 |
-|  8b  | [单调栈结构--进阶](https://www.nowcoder.com/practice/2a2c00e7a88a498693568cef63a4b7bb?tpId=101&tqId=33256&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  3   |   2019-10.13   |         [C++](CH1_Stack_Queue/8b_Monotate_Stack.cpp)         |     数据组织     |
-|  9   | [最大子矩阵](https://www.nowcoder.com/practice/ed610b2fea854791b7827e3111431056?tpId=101&tqId=33084&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  3   |   2019-10.15   |          [C++](CH1_Stack_Queue/9_Max_SubMatrix.cpp)          |    单调栈应用    |
-|  10  | [最大值减最小值<=num的子数组数量](https://www.nowcoder.com/practice/5fe02eb175974e18b9a546812a17428e?tpId=101&tqId=33086&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  3   |   2019-10.17   |          [C++](CH1_Stack_Queue/10_Max_Min_Num.cpp)           |   双端队列应用   |
-| 11a  | [可见山峰对数--基础](https://www.nowcoder.com/practice/80d076bcea594b86ba55b913de4c069d?tpId=101&tqId=33170&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   |   2019-10.17   |          [C++](CH1_Stack_Queue/11_Mountain_Num.cpp)          |     数学思维     |
-| 11b  | [可见山峰对数--进阶](https://www.nowcoder.com/practice/16d1047e9fa54cea8b5170b156d89e38?tpId=101&tqId=33173&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  4   |                |                                                              |    单调栈应用    |
+| 序号 |                             题目                             | 难度 |  完成时间  |                             实现                             |       标签       |
+| :--: | :----------------------------------------------------------: | :--: | :--------: | :----------------------------------------------------------: | :--------------: |
+|  1   | [设计getMin功能的栈](https://www.nowcoder.com/practice/05e57ce2cd8e4a1eae8c3b0a7e9886be?tpId=101&tqId=33073&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   | 2019-9.24  | [C++](CH1_Stack_Queue/1_getMin.cpp)，[Python](CH1_Stack_Queue/1_getMin.py) |      栈设计      |
+|  2   | [使用两个栈模拟队列](https://www.nowcoder.com/practice/6bc058b32ee54a5fa18c62f29bae9863?tpId=101&tqId=33074&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   | 2019-9.24  |           [C++](CH1_Stack_Queue/2_stack_queue.cpp)           |      栈设计      |
+|  3   | [用递归函数和栈逆序一个栈](https://www.nowcoder.com/practice/1de82c89cc0e43e9aa6ee8243f4dbefd?tpId=101&tqId=33075&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   | 2019-9.26  |   [C++](CH1_Stack_Queue/3_Inverse_Stack_by_Recursion.cpp)    |       递归       |
+|  4   | [猫狗队列](https://www.nowcoder.com/practice/8a7e04cff6a54b7095b94261d78108f5?tpId=101&tqId=33168&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   | 2019-10.3  |          [C++](CH1_Stack_Queue/4_Dog_Cat_Queue.cpp)          |      大模拟      |
+|  5   | [用一个栈实现另一个栈的排序](https://www.nowcoder.com/practice/ff8cba64e7894c5582deafa54cca8ff2?tpId=101&tqId=33081&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   | 2019-9.28  |           [C++](CH1_Stack_Queue/5_Sort_Stack.cpp)            |      栈设计      |
+|  6   | [用栈来求解汉诺塔问题](https://www.nowcoder.com/practice/1a2f618b3433487295657b3414f4e7c4?tpId=101&tqId=33090&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  3   | 2019-10.8  |        [C++](CH1_Stack_Queue/6a_Hanoi_Recursive.cpp)         |       递归       |
+|  7   | [生成窗口最大值数组](https://www.nowcoder.com/practice/b316c7f9617744b98fa311ae29ac516c?tpId=101&tqId=33083&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   | 2019-10.6  |        [C++](CH1_Stack_Queue/7_Max_Windows_Array.cpp)        |     双端队列     |
+|  8a  | [单调栈结构--基础](https://www.nowcoder.com/practice/e3d18ffab9c543da8704ede8da578b55?tpId=101&tqId=33169&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   | 2019-10.11 | [C++_v1_](CH1_Stack_Queue/8a1_Monotate_Stack.cpp)<br />[C++_v2_](CH1_Stack_Queue/8a2_Monotate_Stack.cpp) | 模拟<br />单调栈 |
+|  8b  | [单调栈结构--进阶](https://www.nowcoder.com/practice/2a2c00e7a88a498693568cef63a4b7bb?tpId=101&tqId=33256&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  3   | 2019-10.13 |         [C++](CH1_Stack_Queue/8b_Monotate_Stack.cpp)         |     数据组织     |
+|  9   | [最大子矩阵](https://www.nowcoder.com/practice/ed610b2fea854791b7827e3111431056?tpId=101&tqId=33084&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  3   | 2019-10.15 |          [C++](CH1_Stack_Queue/9_Max_SubMatrix.cpp)          |    单调栈应用    |
+|  10  | [最大值减最小值<=num的子数组数量](https://www.nowcoder.com/practice/5fe02eb175974e18b9a546812a17428e?tpId=101&tqId=33086&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  3   | 2019-10.17 |          [C++](CH1_Stack_Queue/10_Max_Min_Num.cpp)           |   双端队列应用   |
+| 11a  | [可见山峰对数--基础](https://www.nowcoder.com/practice/80d076bcea594b86ba55b913de4c069d?tpId=101&tqId=33170&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   | 2019-10.17 |          [C++](CH1_Stack_Queue/11_Mountain_Num.cpp)          |     数学思维     |
+| 11b  | [可见山峰对数--进阶](https://www.nowcoder.com/practice/16d1047e9fa54cea8b5170b156d89e38?tpId=101&tqId=33173&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  4   |            |                                                              |    单调栈应用    |
 
 > **注**：8b题本人C++代码**超时**：仅通过75%测试样例！未能找到原因。
 
@@ -69,6 +79,8 @@
 |  16  | [单链表的选择排序](https://www.nowcoder.com/practice/78f83c3f12d2464591ebc5a73183db35?tpId=101&tqId=33207&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   | 2019-11.23 |         [C++](CH2_LinkedList/16_Selection_Sort.cpp)          |           链表遍历            |
 |  17  | [一种怪异的链表删除方式](https://www.nowcoder.com/practice/86896a89874d4676a3c8d712d9a1eef4?tpId=101&tqId=33225&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   | 2019-11.23 |         [C++](CH2_LinkedList/17_Delete_tempnode.cpp)         |             技巧              |
 |  18  | [向有序的环形链表中插入新节点](https://www.nowcoder.com/practice/8a2ed8d048f241fd92b478140bad18a1?tpId=101&tqId=33226&tPage=1&rp=1&ru=%2Fta%2Fprogrammer-code-interview-guide&qru=%2Fta%2Fprogrammer-code-interview-guide%2Fquestion-ranking) |  1   | 2019-11.23 |      [C++](CH2_LinkedList/18_Circular_List_Insert.cpp)       |           循环链表            |
+|  19  | [合并两个有序链表](https://www.nowcoder.com/practice/98a51a92836e4861be1803aaa9037440?tpId=101&tqId=33227&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   | 2019-11.30 |           [C++](CH2_LinkedList/19_Merge_2List.cpp)           |           链表合并            |
+|  20  | [按照左右半区重新组合单链表](https://www.nowcoder.com/practice/a7a348bdb4634e228cf7704c8a2a8bda?tpId=101&tqId=33228&tPage=1&rp=1&ru=%2Fta%2Fprogrammer-code-interview-guide&qru=%2Fta%2Fprogrammer-code-interview-guide%2Fquestion-ranking) |  1   | 2019-11.30 |         [C++](CH2_LinkedList/20_Left_RightMerge.cpp)         |           链表合并            |
 
 > **注**：13题C++v2版因算法时间复杂度高而无法在OJ上通过测试。
 
@@ -82,5 +94,11 @@
 
 
 
+## 二叉树
 
+| 序号 |                             题目                             | 难度 | 完成时间 | 实现 |    标签    |
+| :--: | :----------------------------------------------------------: | :--: | :------: | :--: | :--------: |
+|  1   | [递归遍历二叉树](https://www.nowcoder.com/practice/566f7f9d68c24691aa5abd8abefa798c?tpId=101&tqId=33229&tPage=1&rp=1&ru=%2Fta%2Fprogrammer-code-interview-guide&qru=%2Fta%2Fprogrammer-code-interview-guide%2Fquestion-ranking) |  1   |          |      | 二叉树遍历 |
+|      |                                                              |      |          |      |            |
+|      |                                                              |      |          |      |            |
 

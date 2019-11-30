@@ -1,0 +1,104 @@
+10_Max_Min_Num.cpp:*/
+10_Max_Min_Num.cpp:	// freopen("in.txt", "r", stdin);
+10_Max_Min_Num.cpp:			// 此时,双端队列维护单的是[i,j]中的最大最小值
+10_Max_Min_Num.cpp:		if (qmin.front() == i)     // 避免队头元素越界
+11_Mountain_Num.cpp:        cin >> n >> p >> m;       // 废话
+11_Mountain_Num.cpp:        cout<<max(2 * n - 3, 0) << endl;    // 2n-3即可
+1_getMin.cpp:*/
+1_getMin.cpp:	// freopen("in1.txt", "r", stdin);     
+1_getMin.cpp:			stackData.push(num);    // 栈不为空时stackMin.top()会出现段错误
+1_getMin_class.cpp:	// freopen("in1.txt", "r", stdin);
+2_stack_queue.cpp:*/
+2_stack_queue.cpp:void ToPop()         // 将push栈的元素全部压入pop栈中
+2_stack_queue.cpp:	if (spop.empty())   // pop栈为空,需要从push栈中一次性导入(这个判断条件是必须的)
+2_stack_queue.cpp:	// freopen("in.txt", "r", stdin);
+3_Inverse_Stack_by_Recursion.cpp:*/
+3_Inverse_Stack_by_Recursion.cpp:int Get_Remove_Last_Ele(stack<int> &s)   // 获取底层元素值并删除之，其他正常放入!
+3_Inverse_Stack_by_Recursion.cpp:	int temp = s.top();     // 当前元素,后续也应当push该值
+3_Inverse_Stack_by_Recursion.cpp:		// 回溯部分
+3_Inverse_Stack_by_Recursion.cpp:		return result;        // 此函数并不完美,
+3_Inverse_Stack_by_Recursion.cpp:	reverse(s);       // 要获取元素之后再递归, 否则递归无限次! 仔细思考
+3_Inverse_Stack_by_Recursion.cpp:	// freopen("in.txt", "r", stdin);
+4_Dog_Cat_Queue.cpp:*/
+4_Dog_Cat_Queue.cpp:	int count, x;         // count表示当前动物在总队列数中的排名,num为该动物的编号
+4_Dog_Cat_Queue.cpp:void Pop1(queue<Pet> &pet)       // 删除队列的一个元素
+4_Dog_Cat_Queue.cpp:void Pop_all(queue<Pet> &pet)    // 删除队列中所有元素
+4_Dog_Cat_Queue.cpp:	// freopen("in.txt", "r", stdin);
+4_Dog_Cat_Queue.cpp:			int x;    // 猫狗的编号
+4_Dog_Cat_Queue.cpp:			string pet_name;       // cat or dog
+4_Dog_Cat_Queue.cpp:			while(!Cat.empty() || !Dog.empty())       // 只要有一个队列非空就必须执行
+4_Dog_Cat_Queue.cpp:				else if (!Cat.empty())     // Cat非空,Dog空
+4_Dog_Cat_Queue.cpp:		else if (s == "pollDog")          // 注意何时全部弹出,何时弹出一个元素
+5_Sort_Stack.cpp:*/
+5_Sort_Stack.cpp:	// freopen("in.txt", "r", stdin);
+5_Sort_Stack.cpp:	stack<int> s1, s2;        // s1是用于存储当前已排序的栈(栈底为min), s2用于存放临时数据
+5_Sort_Stack.cpp:	for (int i = 0; i < num; i++)          // 边输入边更新排序栈
+5_Sort_Stack.cpp:		if (s1.empty() || temp >= s1.top())  // 栈为空或temp比栈顶元素大
+5_Sort_Stack.cpp:		else            // temp比s1栈顶的元素小
+5_Sort_Stack.cpp:			while (!s1.empty() && temp < s1.top())   // temp比s1栈顶元素小时,将s1栈顶丢至s2中.
+5_Sort_Stack.cpp:			while (!s2.empty())       // 再把s2中临时存放的元素丢回s1
+6a_Hanoi_Recursive.cpp:*/
+6a_Hanoi_Recursive.cpp:                         // 本程序默认中间的柱子固定,若想更灵活使用汉诺塔,可将"mid"改为mid变量
+6a_Hanoi_Recursive.cpp:	if (num == 1)         // 递归边界
+6a_Hanoi_Recursive.cpp:	}                          // 返回值记录步数
+6a_Hanoi_Recursive.cpp:	int part1 = process(num-1, left, mid, right, from, to);     // 上层num-1柱子从左->右
+6a_Hanoi_Recursive.cpp:	cout << "Move " << num << " from " << from << " to mid\n"; // 底层柱子从from->to,此时from不一定是left
+6a_Hanoi_Recursive.cpp:	int part2 = process(num-1, left, mid, right, to, from);     // 上层num-1柱子从右->左
+6a_Hanoi_Recursive.cpp:	cout << "Move " << num << " from mid to " << to << endl;    // 底层柱子从to->from
+6a_Hanoi_Recursive.cpp:	int part3 = process(num-1, left, mid, right, from, to);     // 上层num-1柱子从左->右
+6a_Hanoi_Recursive.cpp:	// freopen("in.txt", "r", stdin);
+6a_Hanoi_Recursive.cpp:	int num;          // 本题输入太少,可不使用freopen
+7_Max_Windows_Array.cpp:*/
+7_Max_Windows_Array.cpp:deque<int> dq;            // 注意:存元素下标而非元素值!
+7_Max_Windows_Array.cpp:	// freopen("in.txt", "r", stdin);
+7_Max_Windows_Array.cpp:	int len, w, temp;     // len:数组长度,w:窗口大小,temp:当前输入值
+7_Max_Windows_Array.cpp:	{                     // 若队尾元素小于当前元素,弹出队末元素直到队列为空
+7_Max_Windows_Array.cpp:		while (!dq.empty() && arr[dq.back()] <= arr[i])  // <= !!
+7_Max_Windows_Array.cpp:		dq.push_back(i);         // 这一步是对任意i都必须操作的(思考)
+7_Max_Windows_Array.cpp:		if (i >= w-1)            // 窗口,从w-1下标开始,根据dq输出窗口最大值
+7_Max_Windows_Array.cpp:			while (ind <= i - w)  // 避免队头元素位于窗口外!用if更好!因为每次只加入一个元素
+8a1_Monotate_Stack.cpp:*/
+8a1_Monotate_Stack.cpp:	// freopen("in.txt", "r", stdin);
+8a1_Monotate_Stack.cpp:		for (int j = i-1; j >= 0; j--)        // 向左遍历
+8a1_Monotate_Stack.cpp:		for (int j = i+1; j < num; j++)       // 向右遍历
+8a2_Monotate_Stack.cpp:*/
+8a2_Monotate_Stack.cpp:stack<int> s;            // 存储索引而不是值
+8a2_Monotate_Stack.cpp:	// freopen("in.txt", "r", stdin);
+8a2_Monotate_Stack.cpp:		while (!s.empty() && vec[s.top()] > vec[i])     // 不是单调栈
+8a2_Monotate_Stack.cpp:			lind = s.empty() ? -1 : s.top();   // 判断栈是否为空从而确定左索引
+8a2_Monotate_Stack.cpp:			rind = i;            // 因为加入i后单调性被破坏,故右索引为i
+8a2_Monotate_Stack.cpp:	while (!s.empty())            // 处理最后剩余的元素
+8a2_Monotate_Stack.cpp:		arr[val][1] = -1;          // 因为单调递增,故右边不存在更小的值,右索引为-1
+8b_Monotate_Stack.cpp:*/
+8b_Monotate_Stack.cpp:	// freopen("in.txt", "r", stdin);
+8b_Monotate_Stack.cpp:	for (int i = 0; i < len; i++)    // vec[i]在栈外
+8b_Monotate_Stack.cpp:		while(!s.empty() && vec[s.top()[0]] > vec[i]) // 若加入vec[i]后不再单调递增,故处理单调的序列
+8b_Monotate_Stack.cpp:			s.pop(); // 必须紧跟
+8b_Monotate_Stack.cpp:			// 记录repeat中元素的左索引,为栈顶元素最末尾的索引值,注意不是repeat.size(),repeat已被弹出
+8b_Monotate_Stack.cpp:		if (!s.empty() && vec[s.top()[0]] == vec[i])  // 添加时需要考虑重复的情况,如果重复
+8b_Monotate_Stack.cpp:			vector<int> re_push = s.top();   // 返回值而非引用,故必须pop()出来添加后再push
+8b_Monotate_Stack.cpp:			re_push.push_back(i);    // i是索引,vec[i]是值,比大小时用vec[i],元素添加时用i
+8b_Monotate_Stack.cpp:		else                         // 不重复直接添加即可        
+8b_Monotate_Stack.cpp:	while(!s.empty())       // 处理最后的情况
+8b_Monotate_Stack.cpp:			arr[repeat[i]][1] = -1;       // 因为单调递增,所以右索引为-1
+9_Max_SubMatrix.cpp:*/
+9_Max_SubMatrix.cpp:int height[maxn];       // 动态切割数组
+9_Max_SubMatrix.cpp:int Get_Max_Area(int height[], int n)    // 某一行(n个元素)切割完之后进入该函数计算最大矩形
+9_Max_SubMatrix.cpp:		while (!s.empty() && height[s.top()] >= height[i])    // 栈内不允许出现重复的数值情况!
+9_Max_SubMatrix.cpp:			int j = s.top();        // 栈顶元素,需要记录左右索引的元素
+9_Max_SubMatrix.cpp:			int k = s.empty() ? -1 : s.top();  // 
+9_Max_SubMatrix.cpp:			int area = (i-1-k)*height[j];   // 事实上应该是(i-1)-(k+1)+1 == i-k-1;
+9_Max_SubMatrix.cpp:		s.push(i);           // 注意存放的是索引而不是值
+9_Max_SubMatrix.cpp:	// freopen("in.txt", "r", stdin);
+9_Max_SubMatrix.cpp:			height[j] = matrix[i][j] == 0 ? 0 : height[j] + 1;   // +1不能忘了
+Binary file a.exe matches
+Draft_8c_Monotate_Stack.cpp:*/
+Draft_8c_Monotate_Stack.cpp:stack<int> s, s_temp;            // 存储索引而不是值
+Draft_8c_Monotate_Stack.cpp:int get_lind(stack<int> &s, int val)    // val是栈顶元素索引
+Draft_8c_Monotate_Stack.cpp:	int result = s.top();      // 取出来存着
+Draft_8c_Monotate_Stack.cpp:	s.push(result);            // 回溯时加回来,不能去掉,否则重复数据的rind无法记录
+Draft_8c_Monotate_Stack.cpp:	// freopen("in.txt", "r", stdin);
+Draft_8c_Monotate_Stack.cpp:		while (!s.empty() && vec[s.top()] > vec[i])     // 自顶向下不是单调递增栈
+Draft_8c_Monotate_Stack.cpp:			s.pop();     // pop后栈顶元素开始与下面相同
+Draft_8c_Monotate_Stack.cpp:	while (!s.empty())            // 处理最后剩余的元素
+Draft_8c_Monotate_Stack.cpp:		arr[val][1] = -1;          // 因为单调递增,故右边不存在更小的值,右索引为-1
