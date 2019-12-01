@@ -1,6 +1,6 @@
 # 程序员代码面试指南：IT名企算法与数据结构题目最优解
 
-**Wang Yufei 2019-9.24** 
+**Wang Yufei， 2019-9.24** 
 
 &emsp; &emsp;本项目用于复现**左程云老师**书籍《**程序员代码面试指南:IT名企算法与数据结构题目最优解**》(第二版)中算法代码。作者使用Java作为[书中代码](http://www.broadview.com.cn/book/4889)的实现方式，并采用面向对象方式进行封装(风格类似于LeetCode)。本人参照作者思路(可能会有些许变动)，使用C++进行编程复现。编写的代码均可在[牛客网评测系统](https://www.nowcoder.com/ta/programmer-code-interview-guide)中成功通过测试。:arrow_down: 
 
@@ -9,31 +9,40 @@
 **做题流程**：
 
 1. 看清题目、输入输出等；
-2. 考察所有可能的情况，将过程完整的模拟一遍，讨论细节；
+2. 考察所有可能的情况，整理思路，将过程完整的模拟一遍，讨论细节；
 3. 编写代码、注意细节实现。
 
 **测试说明**：
 
-&emsp;&emsp;以Linux平台为例，可以使用`g++`编译源代码、`gdb`调试代码，并使用输入输出重定向解决测试数据问题！样例如下:
+&emsp;&emsp;以**Linux**为例，使用`g++`编译源代码、`gdb`调试代码，并使用输入输出重定向解决测试数据问题！样例如下:
 
 ```shell
-$ g++ -g test.cpp -o test   # -g表示调试, -o指示可执行文件名称
-$ ./test < in.txt           # 重定向输入
+$ g++ -g test.cpp -o test   # -g表示开启调试模式, -o指示可执行文件名称:test
+$ ./test < in.txt           # 重定向输入,将结果显示在命令行
+# 若需要调试
+$ gdb test
+```
+
+若程序输出较长，需要与正确输出进行逐一比较(如第一章第4题)，可以创建out.txt(保存程序输出)和ans.txt(保存正确输出)，使用Linux管道(`|`)、分流技术(`tee`)以及比较命令`diff`进行对比：
+
+```shell
+$ ./test < in.txt | tee out.txt   # 运行test,结果显示在命令行并保存至out.txt
+$ diff out.txt ans.txt       # 比较程序输出和正确的输出,若相同则返回空!
 ```
 
 ## 常用数据结构的实现
 
-&emsp;&emsp;本块列举书中所涉数据结构的实现。其中部分数据结构尝试使用C++或python手编实现(可能并不整洁高效，为demo版)，也有数据结构可直接调用C++ STL(标准模板库)实现，具体用法可见官方文档。
+&emsp;&emsp;本块列举书中所涉数据结构的实现。其中部分数据结构本人尝试使用C++或python手编实现(可能并不整洁高效，为demo版)，也可直接调用C++ STL(标准模板库)实现，详见[STL官方文档](http://www.cplusplus.com/reference/stl/)。
 
-| 对应书中章节 | 数据结构 |                         STL官方文档                          |                实现方式(demo版)                |
-| :----------: | :------: | :----------------------------------------------------------: | :--------------------------------------------: |
-|      1       |    栈    |   [stack](http://www.cplusplus.com/reference/stack/stack/)   |           [Python](ADT_py/Stack.py)            |
-|      1       |   队列   |   [queue](http://www.cplusplus.com/reference/queue/queue/)   |           [Python](ADT_py/Queue.py)            |
-|      1       | 双端队列 |   [deque](http://www.cplusplus.com/reference/deque/deque/)   |           [Python](ADT_py/Deque.py)            |
-|      2       |   链表   |    [list](http://www.cplusplus.com/reference/list/list/)     |        [C++](ADT_cpp/LinkList_demo.cpp)        |
-|      3       |  二叉树  |                                                              |                                                |
-|      5       |  字符串  | [C++ String类](http://www.cplusplus.com/reference/string/string/) |                       无                       |
-|      9       | 计算几何 |                              无                              | [C++](ADT_cpp/Coputational_Geometry.cpp)(未完) |
+| 对应书中章节 | 数据结构 |                         STL官方文档                          |                       实现方式(demo版)                       |
+| :----------: | :------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|      1       |    栈    |   [stack](http://www.cplusplus.com/reference/stack/stack/)   |                  [Python](ADT_py/Stack.py)                   |
+|      1       |   队列   |   [queue](http://www.cplusplus.com/reference/queue/queue/)   |                  [Python](ADT_py/Queue.py)                   |
+|      1       | 双端队列 |   [deque](http://www.cplusplus.com/reference/deque/deque/)   |                  [Python](ADT_py/Deque.py)                   |
+|      2       |   链表   |    [list](http://www.cplusplus.com/reference/list/list/)     |               [C++](ADT_cpp/LinkList_demo.cpp)               |
+|      3       |  二叉树  |                              无                              | [C++](CH3_Binary_Tree/1a_Traverse_Recursive.cpp)(第三章第一题) |
+|      5       |  字符串  | [C++ String类](http://www.cplusplus.com/reference/string/string/) |                              无                              |
+|      9       | 计算几何 |                              无                              |        [C++](ADT_cpp/Coputational_Geometry.cpp)(未完)        |
 
 ## 第一章：栈与队列
 
@@ -70,7 +79,7 @@ $ ./test < in.txt           # 重定向输入
 |  7b  | [判断链表是否是回文结构--进阶](https://www.nowcoder.com/practice/cdef686631204f079b8f36fe99602fca?tpId=101&tqId=33180&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   | 2019-10.27 |           [C++](CH2_LinkedList/7b_Palindrome.cpp)            |       跳跃指针+链表重构       |
 |  8   | [将单链表按某值划为左边小,<br />中间相等,右边大形式](https://www.nowcoder.com/practice/04fcabc5d76e428c8100dbd855761778?tpId=101&tqId=33181&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   | 2019-10.27 |            [C++](CH2_LinkedList/8a_Partition.cpp)            |           Partition           |
 |  9   | [复制含随机指针节点的链表<br />(LeetCode 138)](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) |  2   | 2019-11.4  | [C++_v1_](CH2_LinkedList/9a_Random_LinkedList.cpp)<br />[C++_v2_](CH2_LinkedList/9b_Random_LinkedList.cpp) | 链表遍历+哈希表<br />链表遍历 |
-|  10  | [两个单链表生成相加链表](https://www.nowcoder.com/practice/2d4ae9ef94c8412ebe49118f8e1da2df?tpId=101&tqId=33182&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   | 2019-10.30 | [C++_v1_](CH2_LinkedList/10a_Add_2LinkedList.cpp)<br />[C++_v2_](CH2_LinkedList/10b_Add_2LinkedList.cpp) |     栈设计<br />链表遍历      |
+|  10  | [两个单链表值相加后的链表](https://www.nowcoder.com/practice/2d4ae9ef94c8412ebe49118f8e1da2df?tpId=101&tqId=33182&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   | 2019-10.30 | [C++_v1_](CH2_LinkedList/10a_Add_2LinkedList.cpp)<br />[C++_v2_](CH2_LinkedList/10b_Add_2LinkedList.cpp) |     栈设计<br />链表遍历      |
 |  11  |                  两个单链表相交的一系列问题                  |      |            |                                                              |                               |
 |  12  | [将单链表的每K个节点之间逆序](https://www.nowcoder.com/practice/66285653d28b4ed6a15613477670e936?tpId=101&tqId=33187&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   | 2019-11.16 | [C++_v1_](CH2_LinkedList/12a_Reverse_KNode.cpp)<br />[C++_v2_](CH2_LinkedList/12b_Reverse_KNode.cpp) |       栈设计、链表遍历        |
 |  13  | [删除无序单链表中重复出现的节点](https://www.nowcoder.com/practice/fb3105d036344c6a8ecbef996e0b23a0?tpId=101&tqId=33205&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   | 2019-11.16 | [C++_v1_](CH2_LinkedList/13a_Delete_Repeat_node.cpp)<br />[C++_v2_](CH2_LinkedList/13b_Delete_Repeat_node.cpp) |     哈希表<br />选择排序      |
@@ -94,11 +103,11 @@ $ ./test < in.txt           # 重定向输入
 
 
 
-## 二叉树
+## 第三章：二叉树
 
-| 序号 |                             题目                             | 难度 | 完成时间 | 实现 |    标签    |
-| :--: | :----------------------------------------------------------: | :--: | :------: | :--: | :--------: |
-|  1   | [递归遍历二叉树](https://www.nowcoder.com/practice/566f7f9d68c24691aa5abd8abefa798c?tpId=101&tqId=33229&tPage=1&rp=1&ru=%2Fta%2Fprogrammer-code-interview-guide&qru=%2Fta%2Fprogrammer-code-interview-guide%2Fquestion-ranking) |  1   |          |      | 二叉树遍历 |
-|      |                                                              |      |          |      |            |
-|      |                                                              |      |          |      |            |
+| 序号 |                             题目                             | 难度 | 完成时间  |                       实现                       |    标签    |
+| :--: | :----------------------------------------------------------: | :--: | :-------: | :----------------------------------------------: | :--------: |
+|  1   | [递归遍历二叉树](https://www.nowcoder.com/practice/566f7f9d68c24691aa5abd8abefa798c?tpId=101&tqId=33229&tPage=1&rp=1&ru=%2Fta%2Fprogrammer-code-interview-guide&qru=%2Fta%2Fprogrammer-code-interview-guide%2Fquestion-ranking) |  1   | 2019-12.1 | [C++](CH3_Binary_Tree/1a_Traverse_Recursive.cpp) | 二叉树遍历 |
+|  2   | [打印二叉树边界节点](https://www.nowcoder.com/practice/33b88978734c42b68699d0c7cef9b598?tpId=101&tqId=33230&tPage=1&rp=1&ru=%2Fta%2Fprogrammer-code-interview-guide&qru=%2Fta%2Fprogrammer-code-interview-guide%2Fquestion-ranking) |      |           |                                                  |            |
+|      |                                                              |      |           |                                                  |            |
 
