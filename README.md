@@ -4,7 +4,7 @@
 
 &emsp; &emsp;本项目用于复现**左程云老师**书籍《**程序员代码面试指南：IT名企算法与数据结构题目最优解**》(第二版)中算法代码。作者使用Java作为[书中代码](http://www.broadview.com.cn/book/4889)的实现方式，并采用面向对象方式进行封装(风格类似于LeetCode)。本人参照作者思路(可能会有些许变动)，使用C++进行编程复现。编写的代码均可在[牛客网评测系统](https://www.nowcoder.com/ta/programmer-code-interview-guide)中成功通过测试。:arrow_down: 
 
-**很抱歉！近期可能更新缓慢，预计一月中旬放假后恢复！**
+**请原谅：由于本人能力有限，部分难题(主要为4星)无法复现！谢谢**
 
 ![Cover](./Cover.jpg)
 
@@ -112,6 +112,20 @@ $ diff out.txt ans.txt       # 比较程序输出和正确的输出,若相同则
 |  1   | [递归遍历二叉树](https://www.nowcoder.com/practice/566f7f9d68c24691aa5abd8abefa798c?tpId=101&tqId=33229&tPage=1&rp=1&ru=%2Fta%2Fprogrammer-code-interview-guide&qru=%2Fta%2Fprogrammer-code-interview-guide%2Fquestion-ranking) |  1   | 2019-12.1  | [C++](CH3_Binary_Tree/1a_Traverse_Recursive.cpp) |                  二叉树遍历                  |
 |  2   | [打印二叉树边界节点](https://www.nowcoder.com/practice/33b88978734c42b68699d0c7cef9b598?tpId=101&tqId=33230&tPage=1&rp=1&ru=%2Fta%2Fprogrammer-code-interview-guide&qru=%2Fta%2Fprogrammer-code-interview-guide%2Fquestion-ranking) |  2   | 2019-12.15 |   [C++](CH3_Binary_Tree/2_Print_Edge_Node.cpp)   |                  二叉树遍历                  |
 |  3   |                      如何直观打印二叉树                      |      |            |                                                  |                                              |
-|  4   | [二叉树的序列化与反序列化](https://www.nowcoder.com/practice/d6425eab86fc402085f9fafc0db97cc2?tpId=101&tqId=33231&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   | 2019-12.15 |                     [C++]()                      | 序列化--二叉树遍历<br />反序列化--二叉树生成 |
+|  4   | [二叉树的序列化与反序列化](https://www.nowcoder.com/practice/d6425eab86fc402085f9fafc0db97cc2?tpId=101&tqId=33231&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  1   | 2019-12.15 |    [C++](CH3_Binary_Tree/4_serialization.cpp)    | 序列化--二叉树遍历<br />反序列化--二叉树生成 |
+|  5   |                     遍历二叉树的神级方法                     |      |            |                                                  |                                              |
+|  6   | [二叉树中累和为指定值的最长路径长度](https://www.nowcoder.com/practice/2d35bc3364e3470381bc4eebd9178747?tpId=101&tqId=33233&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   |            |                                                  |                                              |
 |      |                                                              |      |            |                                                  |                                              |
+|      |                                                              |      |            |                                                  |                                              |
+|      |                                                              |      |            |                                                  |                                              |
+
+
+
+## 第八章：数组与矩阵
+
+| 序号 |                             题目                             | 难度 | 完成时间  |                             实现                             |  标签  |
+| :--: | :----------------------------------------------------------: | :--: | :-------: | :----------------------------------------------------------: | :----: |
+|      |                                                              |      |           |                                                              |        |
+|  10  | [未排序整数数组累加和为给定值的最大子数组长度](https://www.nowcoder.com/practice/a4e34287fa1b41f9bd41f957efbd5dff?tpId=101&tqId=33076&tPage=1&rp=1&ru=/ta/programmer-code-interview-guide&qru=/ta/programmer-code-interview-guide/question-ranking) |  2   | 2020-3.22 | [C++](./CH8_Array_Matrix/10_max_subarray_len_pos_element.cpp) | 双指针 |
+|      |                                                              |      |           |                                                              |        |
 
